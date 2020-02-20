@@ -1,0 +1,45 @@
+﻿@model YeldaSert.DAO.Evrak
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutKullanici.cshtml";
+}
+
+
+    <table class="table">
+        <tr>
+            
+            <th>
+                @Html.DisplayNameFor(model => model.evrakYol)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.evrakTarih)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.evrakDurum)
+            </th>
+          
+            <th>
+                @Html.DisplayNameFor(model => model.Aciklama)
+            </th>
+        </tr>
+        <tr>          
+            <td>
+                <a href="~/Evraklar/@Model.evrakYol">@Model.evrakYol</a>
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.evrakTarih)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.evrakDurum)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.Aciklama)
+            </td>
+           
+
+
+        </tr>
+    </table>
+
+

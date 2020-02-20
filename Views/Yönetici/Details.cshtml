@@ -1,0 +1,66 @@
+﻿@model YeldaSert.DAO.Evrak
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutYönetici.cshtml";
+}
+
+<h2 style="color:blue">Detay Sayfasi</h2>
+
+<table class="table">
+    <tr>
+        <td>
+            @Html.DisplayNameFor(model => model.evrakAd)
+        </td>
+        <td>
+            @Html.DisplayNameFor(model => model.evrakYol)
+        </td>
+        <td>
+            @Html.DisplayNameFor(model => model.evrakTarih)
+        </td>
+        <td>
+            @Html.DisplayNameFor(model => model.evrakDurum)
+        </td>
+        <td>
+            @Html.DisplayNameFor(model => model.Aciklama)
+        </td>
+
+    </tr>
+    <tr>
+        <td>
+            @Html.DisplayFor(model => model.evrakAd)
+        </td>
+        <td>
+            <a href="~/Evraklar/@Model.evrakYol">@Model.evrakYol</a>
+        </td>
+        <td>
+            @Html.DisplayFor(model => model.evrakTarih)
+        </td>
+        <td>
+            @Html.DisplayFor(model => model.evrakDurum)
+        </td>
+        <td>
+            @Html.DisplayFor(model => model.Aciklama)
+        </td>
+
+
+    </tr>
+</table>
+<dd>
+    <input type="text" name="result" id="result" class="form-control" />
+</dd>
+<input type="hidden" name="id" value="@Model.Id" />
+<dd>
+    @Html.DisplayFor(model => model.evrakDurum)
+</dd>
+
+
+@*//@Html.ActionLink("Anasayfa", "Index", "Admin", new { @class = "btn btn-primary" })*@
+
+
+
+<p>
+    @Html.ActionLink("Olumlu", "Olumlu", new { id = Model.Id }, new { @class = "btn btn-success " })
+    @Html.ActionLink("Olumsuz", "Olumsuz", new { id = Model.Id }, new { @class = "btn btn-danger" })
+
+</p>

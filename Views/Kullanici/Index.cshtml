@@ -1,0 +1,62 @@
+﻿@model IEnumerable<YeldaSert.DAO.Evrak>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutKullanici.cshtml";
+}
+
+
+@using (Html.BeginForm("Index", "Kullanici", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.evrakAd)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.evrakYol)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.evrakTarih)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.evrakDurum)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Aciklama)
+            </th>
+
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.evrakAd)
+                </td>
+                <td>
+                    <a href="~/Evraklar/@item.evrakYol">@item.evrakYol</a>
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.evrakTarih)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.evrakDurum)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Aciklama)
+                </td>
+
+                <td>
+                    @Html.ActionLink("Detay", "Details", new { id = item.Id }, new { @class = "btn btn-warning" })
+
+                </td>
+            </tr>
+        }
+    </table>
+}
+
+<p>
+    @Html.ActionLink("Çıkıs Yap", "CıkısYap", "Kullanici", new { @class = "btn btn-danger" })
+</p>

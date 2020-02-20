@@ -1,0 +1,27 @@
+﻿
+@{
+    ViewBag.Title = "_LayoutYönetici";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>_LayoutYönetici</title>s
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-3.3.1.min.js"></script>
+</head>
+<body>
+    <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+            <li>@Html.ActionLink("Anasayfa", "Index", "Yönetici")</li>
+        </ul>
+        
+    </div>
+
+    <main role="main" class="container">
+        @RenderBody()
+    </main>
+</body>
+</html>

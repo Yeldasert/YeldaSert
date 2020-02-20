@@ -1,0 +1,28 @@
+﻿
+@{
+    ViewBag.Title = "Listele";
+    Layout = "~/Views/Shared/_LayoutKullanici.cshtml";
+}
+
+
+<div class="container">
+    @foreach (var Evrak in ViewBag.evraks)
+    {
+    <div class="card">
+        <div class="card-header">
+            @Evrak.evrakAd
+        </div>
+        <div class="card-body">
+
+            <ul class="list-group">
+                <li class="list-group-item">@Evrak.userId</li>
+                <li class="list-group-item">@Evrak.tarih</li>
+                <li class="list-group-item">@Evrak.Durum</li>
+                <li class="list-group-item"><a href="~/Evraklar/@Evrak.Dosya">@Evrak.Dosya</a></li>
+                
+            </ul>
+        </div>
+    </div>
+    }
+</div>
+
